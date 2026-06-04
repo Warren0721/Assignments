@@ -20,19 +20,22 @@ int main(){
         }
     printf("Please enter your temperature:");
     scanf("%lf",  &number );
-
     printf("Please enter the units (F/C): ");
     scanf(" %c",  &units );
     printf("\n");
-    if (units =='F'){
+
+    if (units =='F' || units == 'f'){
         number2= (number -32 ) * 5 / 9;
         printf("A temperature of %.2f degrees Fahrenheit is equivalent to %.2f degrees Celsius. \n", number, number2);
         printf("Do you want another conversion? (Y/N):");
         first++;
         }
-    else if (units=='C'){
+    else if (units=='C' || units == 'c'){
         number2 = (number * 9 / 5) + 32;
         printf("A temperature of %.2f degrees Celsius is equivalent to %.2f degrees Fahrenheit.\n", number,number2 );
+        }else {
+            printf("Invalid unit. Please enter F or C.\n");
+
         printf("Do you want another conversion? (Y/N):");
         first++;
         }
